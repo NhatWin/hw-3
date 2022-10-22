@@ -105,3 +105,12 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// After clicking generate password
+function generatePassword() {
+  const length = prompt("How many characters do you want in your password?");
+  const lower = confirm("Do you want lower case letters in your password?");
+  const upper = confirm("Do you want upper case letters in your password?");
+  const number = confirm("Do you want numbers in your password?");
+  const unique = confirm("Do you want special characters in your password?");
+}
