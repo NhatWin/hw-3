@@ -91,6 +91,8 @@ const upperCasedCharacters = [
   "Z",
 ];
 
+const finArray = []
+
 function generatePassword() {
   // TODO: Write your code here
 }
@@ -109,8 +111,20 @@ generateBtn.addEventListener("click", writePassword);
 // After clicking generate password
 function generatePassword() {
   const length = prompt("How many characters do you want in your password?");
+  if (length < 8 || length > 129 || length === null || Number.isNaN(length)) {
+    alert("must be between 8-128 characters");
+    generatePassword();
+    return
+  } 
   const lower = confirm("Do you want lower case letters in your password?");
   const upper = confirm("Do you want upper case letters in your password?");
   const number = confirm("Do you want numbers in your password?");
   const unique = confirm("Do you want special characters in your password?");
+  
+  return passwordMagic
+}
+
+function passwordMagic() {
+  for (i=0; i < length; i++) {
+  }
 }
