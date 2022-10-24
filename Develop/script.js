@@ -143,9 +143,8 @@ function generatePassword() {
     return
   }
   //Password generator
-  for (i=0; i < length; i++) {
-    const passwordOutput = finArray[Math.floor(finArray.length * Math.random())];
+  for (let i = 0; i < length; i++) {
+    const passwordOutput = Array.from({ length }, () => finArray[Math.floor(finArray.length * Math.random())]).join("");
+  return passwordOutput;
   }
-  return generatePassword;
-  
 }
