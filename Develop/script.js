@@ -91,7 +91,7 @@ const upperCasedCharacters = [
   "Z",
 ];
 
-const finArray = []
+const addArray = []
 
 function generatePassword() {
   // TODO: Write your code here
@@ -121,10 +121,25 @@ function generatePassword() {
   const number = confirm("Do you want numbers in your password?");
   const unique = confirm("Do you want special characters in your password?");
   
+    // Password prompt check
+    if (lower === true) {
+      finArray = lowerCasedCharacters.concat(addArray);
+    }
+    if (upper === true) {
+      finArray = upperCasedCharacters.concat(finArray);
+    }
+    if (number === true) {
+      finArray = numericCharacters.concat(finArray);
+    }
+    if (unique === true) {
+      finArray = specialCharacters.concat(finArray);
+    }
+    console.log(finArray);
   return passwordMagic
 }
 
 function passwordMagic() {
   for (i=0; i < length; i++) {
+    Math.floor(Math.random(length)*finArray.length);
   }
 }
