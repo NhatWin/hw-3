@@ -91,8 +91,7 @@ const upperCasedCharacters = [
   "Z",
 ];
 
-const array = [];
-const addArray = [];
+let finArray = [];
 
 function generatePassword() {
   // TODO: Write your code here
@@ -116,9 +115,8 @@ function generatePassword() {
     alert("Password must be between 8-128 characters");
     generatePassword();
     return
-  } else {
-    finArray = array.concat(addArray);
-  }
+  } 
+
   const lower = confirm("Do you want lower case letters in your password?");
   const upper = confirm("Do you want upper case letters in your password?");
   const number = confirm("Do you want numbers in your password?");
