@@ -91,7 +91,8 @@ const upperCasedCharacters = [
   "Z",
 ];
 
-const addArray = []
+const array = [];
+const addArray = [];
 
 function generatePassword() {
   // TODO: Write your code here
@@ -111,35 +112,40 @@ generateBtn.addEventListener("click", writePassword);
 // After clicking generate password
 function generatePassword() {
   const length = prompt("How many characters do you want in your password?");
-  if (length < 8 || length > 129 || length === null || Number.isNaN(length)) {
-    alert("must be between 8-128 characters");
+  if (length < 8 || length > 129 || length === null || isNaN(length) === true) {
+    alert("Password must be between 8-128 characters");
     generatePassword();
     return
-  } 
+  } else {
+    finArray = array.concat(addArray);
+  }
   const lower = confirm("Do you want lower case letters in your password?");
   const upper = confirm("Do you want upper case letters in your password?");
   const number = confirm("Do you want numbers in your password?");
   const unique = confirm("Do you want special characters in your password?");
   
-    // Password prompt check
-    if (lower === true) {
-      finArray = lowerCasedCharacters.concat(addArray);
-    }
-    if (upper === true) {
-      finArray = upperCasedCharacters.concat(finArray);
-    }
-    if (number === true) {
-      finArray = numericCharacters.concat(finArray);
-    }
-    if (unique === true) {
-      finArray = specialCharacters.concat(finArray);
-    }
-    console.log(finArray);
-  return passwordMagic
-}
-
-function passwordMagic() {
-  for (i=0; i < length; i++) {
-    Math.floor(Math.random(length)*finArray.length);
+  // Password prompt check
+  if (lower === true) {
+    finArray = lowerCasedCharacters.concat(finArray);
+   }
+  if (upper === true) {
+    finArray = upperCasedCharacters.concat(finArray);
   }
+  if (number === true) {
+    finArray = numericCharacters.concat(finArray);
+  }
+  if (unique === true) {
+    finArray = specialCharacters.concat(finArray);
+  }
+  if (lower === false && upper === false && number === false && unique === false) {
+    alert("Password can not be made with given information");
+    generatePassword();
+    return
+  }
+  //Password generator
+  for (i=0; i < length; i++) {
+    const passwordOutput = finArray[Math.floor(finArray.length * Math.random())];
+  }
+  return generatePassword;
+  
 }
